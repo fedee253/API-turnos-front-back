@@ -1,0 +1,48 @@
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Bebas Neue" rel="stylesheet">
+</head>
+
+<h1 class="row justify-content-md-center" style="margin-top: 5%">
+  Lista Jornadas
+</h1>
+
+<div class="container justify-content-md-center" style="margin-top: 1%">
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>ID Empleado</th>
+        <th>Tipo</th>
+        <th>Hora de Entrada</th>
+        <th>Hora de Salida</th>
+        <th>Hs Trabajadas</th>
+        <th>Fecha</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of listaJornadas">
+        <td>
+          {{ x.idJornada }}
+        </td>
+        <td>
+          {{ x.idEmpleado }}
+        </td>
+        <td>
+          {{ x.tipo }}
+        </td>
+        <td>{{ x.horaEntrada }}:00hs</td>
+        <td>{{ x.horaSalida }}:00hs</td>
+        <td>
+          {{ x.horasTrabajadas }}
+        </td>
+        <td>
+          {{ x.fechaIngreso }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="row justify-content-md-center" style="margin-top: 2%">
+  <button name="volver" class="btn btn-secondary" routerLink="">Volver</button>
+</div>

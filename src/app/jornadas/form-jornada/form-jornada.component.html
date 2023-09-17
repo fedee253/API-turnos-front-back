@@ -1,0 +1,117 @@
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Bebas Neue" rel="stylesheet">
+</head>
+
+
+<form [formGroup]="formJornada" (submit)="send()">
+
+  <div class="row">
+    <div class="col">
+      <label>ID Empleado</label>
+    </div>
+    <div class="col">
+      <input
+        type="number"
+        id="idEmpleado"
+        formControlName="idEmpleado"
+        placeholder="Ingresar ID del empleado"
+      />
+      <div
+        *ngIf="
+          formJornada.get('idEmpleado')?.invalid &&
+          formJornada.get('idEmpleado')?.touched
+        "
+      >
+        <small class="text-danger"> El ID es inválido </small>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label>Tipo de Jornada</label>
+    </div>
+    <div class="col">
+      <input
+        type="text"
+        id="tipo"
+        formControlName="tipo"
+        placeholder="Ingresar tipo"
+      />
+      <div
+        *ngIf="
+          formJornada.get('tipo')?.invalid && formJornada.get('tipo')?.touched
+        "
+      >
+        <small class="text-danger"> El tipo de jornada es inválido </small>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <label>Hora de Entrada</label>
+    </div>
+    <div class="col">
+      <input
+        type="number"
+        id="horaEntrada"
+        formControlName="horaEntrada"
+        placeholder="Ingresar hora de entrada"
+      />
+      <div
+        *ngIf="
+          formJornada.get('horaEntrada')?.invalid &&
+          formJornada.get('horaEntrada')?.touched
+        "
+      >
+        <small class="text-danger"> La hora de entrada es inválida </small>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+    <label>Hora de Salida</label>
+  </div>
+    <div class="col">
+    <input
+      type="number"
+      id="horaSalida"
+      formControlName="horaSalida"
+      placeholder="Ingresar hora de salida"
+    />
+    <div
+    *ngIf="
+      formJornada.get('horaSalida')?.invalid &&
+      formJornada.get('horaSalida')?.touched
+    "
+  >
+    <small class="text-danger"> La hora de salida es inválida </small>
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <label>Fecha</label>
+  </div>
+    <div class="col">
+    <input type="date" id="fechaIngreso" formControlName="fechaIngreso" style="float:right"/>
+    </div>
+</div>
+
+<div  class="row justify-content-md-center" style="margin-top: 10%">
+  <button class="btn btn-warning" name="Limpiar" (click)="clean()">
+    Limpiar formulario
+  </button>
+</div>
+
+  <div  class="row justify-content-md-center" style="margin-top: 5%">
+    <button type="submit" class="btn btn-success" [disabled]="formJornada.invalid">Guardar</button>
+  </div>
+
+  <div class="row justify-content-md-center" style="margin-top: 15%">
+    <button name="volver" class="btn btn-secondary" routerLink="">Volver</button>
+  </div>
+
+</form>

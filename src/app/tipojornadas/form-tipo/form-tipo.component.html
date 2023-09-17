@@ -1,0 +1,106 @@
+<form [formGroup]="formTipo" (submit)="send()">
+  <div class="row">
+    <div class="col">
+      <label>Nombre</label>
+    </div>
+    <div class="col">
+      <input
+        type="text"
+        id="nombre"
+        formControlName="nombre"
+        placeholder="Ingresar nombre"
+      />
+      <div
+        *ngIf="
+          formTipo.get('nombre')?.invalid && formTipo.get('nombre')?.touched
+        "
+      >
+        <small class="text-danger"> El nombre es inválido </small>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <label>Minimo de horas</label>
+    </div>
+    <div class="col">
+      <input
+        type="number"
+        id="minHoras"
+        formControlName="minHoras"
+        placeholder="Min Horas"
+      />
+      <div
+        *ngIf="
+          formTipo.get('minHoras')?.invalid && formTipo.get('minHoras')?.touched
+        "
+      >
+        <small class="text-danger"> El minimo de horas es inválido </small>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <label>Maximo de horas</label>
+    </div>
+    <div class="col">
+      <input
+        type="number"
+        id="maxHoras"
+        formControlName="maxHoras"
+        placeholder="Max Horas"
+      />
+      <div
+        *ngIf="
+          formTipo.get('maxHoras')?.invalid && formTipo.get('maxHoras')?.touched
+        "
+      >
+        <small class="text-danger"> El maximo de horas es inválido</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <label>¿Es día libre?</label>
+    </div>
+    <div class="col">
+      <select
+        class="form-select"
+        formControlName="diaLibre"
+        aria-label="Default select example"
+        style="float: right"
+      >
+        <option value="true">Si</option>
+        <option value="false">No</option>
+      </select>
+      <div
+        *ngIf="
+          formTipo.get('diaLibre')?.invalid && formTipo.get('diaLibre')?.touched
+        "
+      >
+        <small class="text-danger"> El maximo de horas es inválido</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-md-center" style="margin-top: 10%">
+    <button name="Limpiar" class="btn btn-warning" (click)="clean()">
+      Limpiar formulario
+    </button>
+  </div>
+
+  <div class="row justify-content-md-center" style="margin-top: 5%">
+    <button type="submit" class="btn btn-success" [disabled]="formTipo.invalid">
+      Guardar
+    </button>
+  </div>
+
+  <div class="row justify-content-md-center" style="margin-top: 15%">
+    <button name="volver" class="btn btn-secondary" routerLink="">
+      Volver
+    </button>
+  </div>
+</form>

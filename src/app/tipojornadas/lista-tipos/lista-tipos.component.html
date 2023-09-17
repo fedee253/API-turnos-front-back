@@ -1,0 +1,40 @@
+<h1 class="row justify-content-md-center" style="margin-top: 5%">
+  Lista de tipos de jornada
+</h1>
+
+<div class="container justify-content-md-center" style="margin-top: 1%">
+  <table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>NOMBRE</th>
+        <th>Cant. min. de horas</th>
+        <th>Cant. max. de horas</th>
+        <th>Es dia libre</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of listaTipos">
+        <td>
+          {{ x.id }}
+        </td>
+        <td>
+          {{ x.nombre }}
+        </td>
+        <td>
+          {{ x.minHoras }}
+        </td>
+        <td>
+          {{ x.maxHoras }}
+        </td>
+        <td>
+          {{ x.diaLibre }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="row justify-content-md-center" style="margin-top: 1%">
+  <button name="volver" class="btn btn-secondary" routerLink="">Volver</button>
+</div>

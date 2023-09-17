@@ -1,0 +1,81 @@
+<form [formGroup]="formEmpleado" (submit)="send()">
+  <div class="row">
+    <div class="col">
+      <label>Nombre</label>
+    </div>
+    <div class="col">
+      <input
+        type="text"
+        id="name"
+        formControlName="name"
+        placeholder="Ingresar nombre"
+      />
+      <div
+        *ngIf="
+          formEmpleado.get('name')?.invalid && formEmpleado.get('name')?.touched
+        "
+      >
+        <small class="text-danger"> El nombre es obligatorio </small>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <label>Apellido</label>
+    </div>
+    <div class="col">
+      <input
+        type="text"
+        id="lastname"
+        formControlName="lastname"
+        placeholder="Ingresar apellido"
+      />
+      <div
+        *ngIf="
+          formEmpleado.get('lastname')?.invalid &&
+          formEmpleado.get('lastname')?.touched
+        "
+      >
+        <small class="text-danger"> El apellido es obligatorio </small>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <label>DNI</label>
+    </div>
+    <div class="col">
+      <input type="number" id="dni" formControlName="dni" placeholder="DNI" />
+      <div
+        *ngIf="
+          formEmpleado.get('dni')?.invalid && formEmpleado.get('dni')?.touched
+        "
+      >
+        <small class="text-danger"> El DNI es inválido</small>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-md-center" style="margin-top: 10%">
+    <button name="Limpiar" class="btn btn-warning" (click)="clean()">
+      Limpiar formulario
+    </button>
+  </div>
+
+  <div class="row justify-content-md-center" style="margin-top: 5%">
+    <button
+      type="submit"
+      class="btn btn-success"
+      [disabled]="formEmpleado.invalid"
+    >
+      Guardar
+    </button>
+  </div>
+
+  <div class="row justify-content-md-center" style="margin-top: 15%">
+    <button name="volver" class="btn btn-secondary" routerLink="">
+      Volver
+    </button>
+  </div>
+</form>

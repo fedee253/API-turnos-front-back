@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Jornadas Rotativas</title>
+  </head>
+
+  <body>
+    <div class="row justify-content-md-center" style="margin-top: 10%">
+      <h1>APP Turnos Rotativos</h1>
+    </div>
+
+
+    <div class="container justify-content-md-center">
+      <div class="row justify-content-md-center" style="margin-top: 5%">
+        <div class="col-2">
+          <button
+            name="empleado"
+            class="btn btn-primary"
+            routerLink="empleado/alta"
+          >
+            Añadir Empleado
+            <span></span>
+          </button>
+        </div>
+        <div class="col-2" style="float: right">
+          <button
+            name="listaempleados"
+            class="btn btn-primary"
+            routerLink="empleado/lista"
+            style="float: right"
+          >
+            Listar empleados
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="row justify-content-md-center" style="margin-top: 1%">
+        <div class="col-2">
+          <button
+            name="jornada"
+            class="btn btn-primary"
+            routerLink="jornada/alta"
+          >
+            Añadir Jornada
+            <span></span>
+          </button>
+        </div>
+        <div class="col-2">
+          <button
+            name="listajornadas"
+            routerLink="jornada/lista"
+            style="float: right"
+          >
+            Listar jornadas
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="row justify-content-md-center" style="margin-top: 1%">
+        <div class="col-2">
+          <button routerLink="tipo/alta" class="btn btn-primary">
+            Añadir Tipo de Jornada
+            <span></span>
+          </button>
+        </div>
+        <div class="col-2">
+          <button
+            name="listatipos"
+            routerLink="tipo/lista"
+            style="float: right"
+          >
+            Listar tipos
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
